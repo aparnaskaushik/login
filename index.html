@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+          margin: 0;
+          padding: 0;
+        }
+    
+        .container {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 4px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        h1 {
+          color: #333;
+          text-align: center;
+        }
+        input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background-color: #555;
+    }
+
+    .error-message {
+      color: red;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form>
+      <div class="error-message" id="error-message"></div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+
+      <input type="submit" value="Login" class="btn">
+    </form>
+  </div>
+  <script>
+    // basic JavaScript code for form validation
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      if (username === '' || password === '') {
+        document.getElementById('error-message').textContent = 'Please fill in all fields.';} 
+      else if (username !== 'your-username' || password !== 'your-password') {
+        document.getElementById('error-message').textContent = 'Invalid username or password.';} 
+      else {
+        // Successful login
+        window.location.href = 'dashboard.html'; // Redirecting to dashboard or desired page
+      }
+    });
+  </script>
+</body>
+</html>
